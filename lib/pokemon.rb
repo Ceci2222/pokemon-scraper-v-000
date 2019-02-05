@@ -21,6 +21,7 @@ class Pokemon
     poke_name = db.execute("SELECT name FROM pokemon WHERE id = ?", id)
     poke_type = db.execute("SELECT type FROM pokemon WHERE id = ?", id)
     poke_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id)
+    binding.pry
     self.new(id: id, name: poke_name[0][0], type: poke_type[0][0], hp: poke_hp[0][0])
   end
   
