@@ -22,7 +22,7 @@ class Pokemon
     poke_type = db.execute("SELECT type FROM pokemon WHERE id = ?", id)
     poke_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id)
     binding.pry
-    self.new(id: id, name: poke_name[0][0], type: poke_type[0][0], hp: poke_hp)
+    self.new(id: id, name: poke_name[0][0], type: poke_type[0][0], hp: poke_hp[0][0])
   end
   
   def alter_hp(new_hp, db)
